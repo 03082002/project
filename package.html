@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SD Web-Site</title>
+    <link rel="stylesheet" href="myapp/css/style.css">
+    <!-- bootstrap-cdn- css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- bootstrap-cdn- css link -->
+
+    <!-- fontawesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- fontawesome cdn link -->
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- google fonts -->
+</head>
+
+<body>
+
+<section class="packages">
+
+        <div class="container">
+
+            <div class="main-txt">
+                <h1><span>P</span>ackages</h1>
+            </div>
+
+            <div class="row" style="margin-top: 50px;">
+                {% for i in uid %}
+                <div class="col-md-4 py-3 py-md-0">
+                   
+                    <div class="card">
+                        <img src="{{i.pic.url}}" alt="">
+                        <div class="card-body">
+                            <h3>{{i.country}}</h3>
+                            <p>{{i.description}}</p>
+
+                            <div class="star">
+                                <i class="fa-solid fa-star checked"></i>
+                                <i class="fa-solid fa-star checked"></i>
+                                <i class="fa-solid fa-star checked"></i>
+                                <i class="fa-solid fa-star "></i>
+                                <i class="fa-solid fa-star "></i>
+                            </div>
+                            <h6>Price: <strong>{{i.price}}</strong></h6>
+                            
+                        </div>
+                        <a href="{% url 'book1' i.id %}" class="btn btn-default btn-round btn-simple">Book</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+    
+
+    <!--section footer end -->
+
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
